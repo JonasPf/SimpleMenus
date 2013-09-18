@@ -1,0 +1,106 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module simplemenus.main</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="simplemenus.html"><font color="#ffffff">simplemenus</font></a>.main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C:/dev/simplemenus/simplemenus/main.py">c:\dev\simplemenus\simplemenus\main.py</a></font></td></tr></table>
+    <p><tt>The&nbsp;main&nbsp;module.&nbsp;All&nbsp;of&nbsp;its&nbsp;public&nbsp;functions&nbsp;get&nbsp;exported&nbsp;by&nbsp;the&nbsp;package&nbsp;(see&nbsp;__init__.py)<br>
+&nbsp;<br>
+Copyright&nbsp;(c)&nbsp;2013,&nbsp;Jonas&nbsp;Pfannschmidt<br>
+Licensed&nbsp;under&nbsp;the&nbsp;MIT&nbsp;license&nbsp;<a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="__builtin__.html">__builtin__</a><br>
+<a href="datetime.html">datetime</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="types.html">types</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-configure"><strong>configure</strong></a>(key, value)</dt><dd><tt>Change&nbsp;the&nbsp;configuration.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key:&nbsp;One&nbsp;of&nbsp;the&nbsp;following&nbsp;strings<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Displayed&nbsp;when&nbsp;the&nbsp;user&nbsp;gets&nbsp;prompted&nbsp;for&nbsp;an&nbsp;input.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_option&nbsp;-&nbsp;Which&nbsp;text&nbsp;needs&nbsp;to&nbsp;be&nbsp;entered&nbsp;to&nbsp;cancel&nbsp;an&nbsp;operation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel_text&nbsp;&nbsp;&nbsp;-&nbsp;Which&nbsp;text&nbsp;gets&nbsp;displayed&nbsp;for&nbsp;the&nbsp;cancel&nbsp;option.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list_format&nbsp;&nbsp;&nbsp;-&nbsp;How&nbsp;to&nbsp;display&nbsp;lists.&nbsp;Uses&nbsp;str.format()&nbsp;syntax.&nbsp;Use&nbsp;{option}&nbsp;and&nbsp;{text}&nbsp;as&nbsp;placeholders.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;empty_text&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Text&nbsp;that&nbsp;gets&nbsp;displayed&nbsp;when&nbsp;a&nbsp;list&nbsp;is&nbsp;empty<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;date_format&nbsp;&nbsp;&nbsp;-&nbsp;strptime&nbsp;format&nbsp;to&nbsp;parse&nbsp;dates.&nbsp;See&nbsp;docs.python.org/library/datetime.html#strftime-strptime-behavior<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;force_return&nbsp;&nbsp;-&nbsp;Always&nbsp;confirm&nbsp;input&nbsp;by&nbsp;pressing&nbsp;the&nbsp;return&nbsp;key<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;The&nbsp;configuration&nbsp;value.&nbsp;See&nbsp;<a href="#-reset_config">reset_config</a>()&nbsp;for&nbsp;the&nbsp;defaults</tt></dd></dl>
+ <dl><dt><a name="-get_boolean"><strong>get_boolean</strong></a>(text<font color="#909090">=''</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Repeat&nbsp;until&nbsp;the&nbsp;user&nbsp;enters&nbsp;'y'&nbsp;or&nbsp;'n'&nbsp;or&nbsp;a&nbsp;string&nbsp;starting&nbsp;with&nbsp;'y'&nbsp;or&nbsp;'n'&nbsp;(i.e.&nbsp;'yes'&nbsp;and&nbsp;'no').</tt></dd></dl>
+ <dl><dt><a name="-get_character"><strong>get_character</strong></a>(text<font color="#909090">=''</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Get&nbsp;character&nbsp;without&nbsp;waiting&nbsp;for&nbsp;the&nbsp;enter&nbsp;key.</tt></dd></dl>
+ <dl><dt><a name="-get_date"><strong>get_date</strong></a>(text<font color="#909090">=''</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Repeat&nbsp;until&nbsp;the&nbsp;user&nbsp;enters&nbsp;a&nbsp;valid&nbsp;date.</tt></dd></dl>
+ <dl><dt><a name="-get_from_dictionary"><strong>get_from_dictionary</strong></a>(dictionary, show_cancel<font color="#909090">=True</font>)</dt><dd><tt>Let&nbsp;the&nbsp;user&nbsp;choose&nbsp;a&nbsp;key&nbsp;and&nbsp;return&nbsp;the&nbsp;corresponding&nbsp;value.<br>
+&nbsp;<br>
+Note:&nbsp;Use&nbsp;OrderedDict&nbsp;to&nbsp;preserve&nbsp;the&nbsp;option&nbsp;order</tt></dd></dl>
+ <dl><dt><a name="-get_from_list"><strong>get_from_list</strong></a>(my_list, text<font color="#909090">=''</font>, show_cancel<font color="#909090">=True</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Enumerates&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;and&nbsp;lets&nbsp;the&nbsp;user&nbsp;choose&nbsp;one&nbsp;value.<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a)&nbsp;one<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b)&nbsp;two<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c)&nbsp;three<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d)&nbsp;four<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0)&nbsp;Cancel<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</tt></dd></dl>
+ <dl><dt><a name="-get_integer"><strong>get_integer</strong></a>(text<font color="#909090">=''</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Repeat&nbsp;until&nbsp;the&nbsp;user&nbsp;enters&nbsp;a&nbsp;valid&nbsp;number.</tt></dd></dl>
+ <dl><dt><a name="-get_option"><strong>get_option</strong></a>(options, text<font color="#909090">=''</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Repeat&nbsp;until&nbsp;the&nbsp;user&nbsp;chooses&nbsp;a&nbsp;valid&nbsp;option.<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;If&nbsp;there&nbsp;are&nbsp;only&nbsp;single-letter&nbsp;options&nbsp;the&nbsp;input&nbsp;is&nbsp;accepted&nbsp;directly&nbsp;otherwise&nbsp;the&nbsp;user&nbsp;has&nbsp;to&nbsp;confirm&nbsp;by&nbsp;pressing&nbsp;the&nbsp;return&nbsp;key<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options:&nbsp;a&nbsp;list&nbsp;of&nbsp;strings&nbsp;that&nbsp;are&nbsp;valid&nbsp;options</tt></dd></dl>
+ <dl><dt><a name="-get_string"><strong>get_string</strong></a>(text<font color="#909090">=''</font>, default<font color="#909090">=None</font>)</dt><dd><tt>Get&nbsp;string&nbsp;or&nbsp;default&nbsp;value.</tt></dd></dl>
+ <dl><dt><a name="-input"><strong>input</strong></a> = raw_input(...)</dt><dd><tt>raw_input([prompt])&nbsp;-&gt;&nbsp;string<br>
+&nbsp;<br>
+Read&nbsp;a&nbsp;string&nbsp;from&nbsp;standard&nbsp;input.&nbsp;&nbsp;The&nbsp;trailing&nbsp;newline&nbsp;is&nbsp;stripped.<br>
+If&nbsp;the&nbsp;user&nbsp;hits&nbsp;EOF&nbsp;(Unix:&nbsp;Ctl-D,&nbsp;Windows:&nbsp;Ctl-Z+Return),&nbsp;raise&nbsp;EOFError.<br>
+On&nbsp;Unix,&nbsp;GNU&nbsp;readline&nbsp;is&nbsp;used&nbsp;if&nbsp;enabled.&nbsp;&nbsp;The&nbsp;prompt&nbsp;string,&nbsp;if&nbsp;given,<br>
+is&nbsp;printed&nbsp;without&nbsp;a&nbsp;trailing&nbsp;newline&nbsp;before&nbsp;reading.</tt></dd></dl>
+ <dl><dt><a name="-reset_config"><strong>reset_config</strong></a>()</dt><dd><tt>Resets&nbsp;the&nbsp;configuration&nbsp;to&nbsp;the&nbsp;default</tt></dd></dl>
+ <dl><dt><a name="-show_enumerated_list"><strong>show_enumerated_list</strong></a>(my_list)</dt><dd><tt>Shows&nbsp;a&nbsp;list&nbsp;enumerated&nbsp;by&nbsp;a,&nbsp;b,&nbsp;c,&nbsp;...</tt></dd></dl>
+ <dl><dt><a name="-show_headline"><strong>show_headline</strong></a>(headline)</dt><dd><tt>Show&nbsp;a&nbsp;headline.<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+------+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Test&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+------+</tt></dd></dl>
+ <dl><dt><a name="-show_small_headline"><strong>show_small_headline</strong></a>(headline)</dt><dd><tt>Show&nbsp;a&nbsp;smaller&nbsp;headline.<br>
+&nbsp;<br>
+Example:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+--&nbsp;Test&nbsp;--+</tt></dd></dl>
+ <dl><dt><a name="-start_menu"><strong>start_menu</strong></a>(menu, headline)</dt><dd><tt>Show&nbsp;a&nbsp;menu&nbsp;and&nbsp;run&nbsp;a&nbsp;function&nbsp;if&nbsp;the&nbsp;user&nbsp;chooses&nbsp;one&nbsp;menu&nbsp;entry.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;menu:&nbsp;an&nbsp;OrderedDict&nbsp;dictionary.&nbsp;The&nbsp;keys&nbsp;are&nbsp;shown&nbsp;as&nbsp;menu&nbsp;entries.&nbsp;If&nbsp;a&nbsp;value&nbsp;is&nbsp;a&nbsp;functions&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;gets&nbsp;called&nbsp;when&nbsp;the&nbsp;user&nbsp;chooses&nbsp;the&nbsp;corresponding&nbsp;menu&nbsp;entry&nbsp;otherwise&nbsp;it&nbsp;gets&nbsp;returned.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headline:&nbsp;the&nbsp;title&nbsp;for&nbsp;the&nbsp;menu</tt></dd></dl>
+ <dl><dt><a name="-wait_for_enter"><strong>wait_for_enter</strong></a>()</dt><dd><tt>Waits&nbsp;for&nbsp;the&nbsp;user&nbsp;to&nbsp;press&nbsp;enter.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>print_function</strong> = _Feature((2, 6, 0, 'alpha', 2), (3, 0, 0, 'alpha', 0), 65536)</td></tr></table>
+</body></html>
