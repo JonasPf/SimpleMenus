@@ -23,5 +23,7 @@ You can find more in the examples and test direcories and an API documentation a
 
 Tested with Python 2.7.5 and Python 3.3 on Windows and Linux.
 
+Webpage: http://www.pulsedo.com/free/simplemenus
+
 Copyright (c) 2013, Jonas Pfannschmidt
 Licensed under the MIT license http://www.opensource.org/licenses/mit-license.php
