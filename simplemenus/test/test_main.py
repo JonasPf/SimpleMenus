@@ -425,16 +425,16 @@ c) dog
 
 class Test_start_menu(IOTestCase):
 
-	def first(self):
-		print("first called")
-
-	def second(self):
-		print("second called")
-
 	def test_start_menu(self):
+		def first():
+			print("first called")
+
+		def second():
+			print("second called")
+
 		self.menu = collections.OrderedDict()
-		self.menu['First Entry'] = lambda: self.first()
-		self.menu['Second Entry'] = lambda: self.second()
+		self.menu['First Entry'] = first
+		self.menu['Second Entry'] = second
 
 		self.mockSingleCharacterInput('a0')
 		start_menu(self.menu, "Hello World")
@@ -462,6 +462,67 @@ b) Second Entry
 > 0
 """)
 
+	def test_start_menu_with_arguments(self):
+		def first(firstname, surname):
+			print("first called with {} {}".format(firstname, surname))
+
+		self.menu = collections.OrderedDict()
+		self.menu['First Entry'] = first
+
+		self.mockSingleCharacterInput('a0')
+		start_menu(self.menu, "Hello World", 'Mickey', 'Mouse')
+
+		self.assertOutput("""
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+
+0) Cancel
+> a
+first called with Mickey Mouse
+
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+
+0) Cancel
+> 0
+""")
+
+	def test_start_menu_with_keyword_arguments(self):
+		def first(surname, firstname): # deliberately in the wrong order to test keyword args
+			print("first called with {} {}".format(firstname, surname))
+
+		self.menu = collections.OrderedDict()
+		self.menu['First Entry'] = first
+
+		self.mockSingleCharacterInput('a0')
+		start_menu(self.menu, "Hello World", firstname='Mickey', surname='Mouse')
+
+		self.assertOutput("""
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+
+0) Cancel
+> a
+first called with Mickey Mouse
+
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+
+0) Cancel
+> 0
+""")
 
 class Test_configure(IOTestCase):
 	"""

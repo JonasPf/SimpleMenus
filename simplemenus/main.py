@@ -224,18 +224,19 @@ def show_small_headline(headline):
 
 	print("+--- " + headline + " ---+")
 
-def start_menu(menu, headline):
+def start_menu(menu, headline, *args, **kwargs):
 	"""Show a menu and run a function if the user chooses one menu entry.
 
 	Args:
 		menu: an OrderedDict dictionary. The keys are shown as menu entries. If a value is a functions 
 			  it gets called when the user chooses the corresponding menu entry otherwise it gets returned.
 		headline: the title for the menu
+		*args, **kwargs: Arguments that get passed to a chosen function (or ignored if it isn't a function)
 	"""
 	show_headline(headline)
 	chosen = get_from_dictionary(menu)
 	while isinstance(chosen, types.FunctionType):
-		chosen()
+		chosen(*args, **kwargs)
 		show_headline(headline)
 		chosen = get_from_dictionary(menu)
 
