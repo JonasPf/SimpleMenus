@@ -462,6 +462,101 @@ b) Second Entry
 > 0
 """)
 
+	def test_start_menu(self):
+		def first():
+			print("first called")
+
+		def second():
+			print("second called")
+
+		self.menu = collections.OrderedDict()
+		self.menu['First Entry'] = first
+		self.menu['Second Entry'] = second
+
+		self.mockSingleCharacterInput('ab0')
+		start_menu(self.menu, "Hello World")
+
+		self.assertOutput("""
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+b) Second Entry
+
+0) Cancel
+> a
+first called
+
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+b) Second Entry
+
+0) Cancel
+> b
+second called
+
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+b) Second Entry
+
+0) Cancel
+> 0
+""")
+
+	def test_start_menu_non_repeat(self):
+		def first():
+			print("first called")
+
+		def second():
+			print("second called")
+
+		self.menu = collections.OrderedDict()
+		self.menu['First Entry'] = first
+		self.menu['Second Entry'] = second
+
+		self.mockSingleCharacterInput('ab0')
+		start_menu(self.menu, "Hello World", repeat=False)
+
+		self.assertOutput("""
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+b) Second Entry
+
+0) Cancel
+> a
+first called
+""")
+
+	def test_start_menu_hide_cancel(self):
+		def first():
+			print("first called")
+
+		self.menu = collections.OrderedDict()
+		self.menu['First Entry'] = first
+
+		self.mockSingleCharacterInput('a')
+		start_menu(self.menu, "Hello World", repeat=False, show_cancel=False)
+
+		self.assertOutput("""
++-------------+
+| Hello World |
++-------------+
+
+a) First Entry
+> a
+first called
+""")
+
 	def test_start_menu_with_arguments(self):
 		def first(firstname, surname):
 			print("first called with {} {}".format(firstname, surname))
@@ -470,7 +565,7 @@ b) Second Entry
 		self.menu['First Entry'] = first
 
 		self.mockSingleCharacterInput('a0')
-		start_menu(self.menu, "Hello World", 'Mickey', 'Mouse')
+		start_menu(self.menu, "Hello World", args=('Mickey', 'Mouse'))
 
 		self.assertOutput("""
 +-------------+
@@ -501,7 +596,7 @@ a) First Entry
 		self.menu['First Entry'] = first
 
 		self.mockSingleCharacterInput('a0')
-		start_menu(self.menu, "Hello World", firstname='Mickey', surname='Mouse')
+		start_menu(self.menu, "Hello World", kwargs={'firstname': 'Mickey', 'surname': 'Mouse'})
 
 		self.assertOutput("""
 +-------------+

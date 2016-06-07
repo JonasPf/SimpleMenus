@@ -224,21 +224,30 @@ def show_small_headline(headline):
 
 	print("+--- " + headline + " ---+")
 
-def start_menu(menu, headline, *args, **kwargs):
+def start_menu(menu, headline, repeat=True, show_cancel=True, args=[], kwargs={}):
 	"""Show a menu and run a function if the user chooses one menu entry.
 
 	Args:
 		menu: an OrderedDict dictionary. The keys are shown as menu entries. If a value is a functions 
 			  it gets called when the user chooses the corresponding menu entry otherwise it gets returned.
 		headline: the title for the menu
-		*args, **kwargs: Arguments that get passed to a chosen function (or ignored if it isn't a function)
+		repeat: Whether to show the menu again until the user chooses cancel
+		show_cancel: Whether to show the cancel option
+		args: a list of arguments that get passed to a chosen function
+		kwargs: a dict of keyword arguments that get passed to a chosen function
 	"""
 	show_headline(headline)
-	chosen = get_from_dictionary(menu)
-	while isinstance(chosen, types.FunctionType):
-		chosen(*args, **kwargs)
-		show_headline(headline)
-		chosen = get_from_dictionary(menu)
+
+	if repeat:
+		chosen = get_from_dictionary(menu, show_cancel=show_cancel)
+		while isinstance(chosen, types.FunctionType):
+			chosen(*args, **kwargs)
+			show_headline(headline)
+			chosen = get_from_dictionary(menu)
+	else:
+		chosen = get_from_dictionary(menu, show_cancel=show_cancel)
+		if isinstance(chosen, types.FunctionType):
+			chosen(*args, **kwargs)
 
 	return chosen
 
