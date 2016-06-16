@@ -178,13 +178,13 @@ def get_from_list(my_list, text = '', show_cancel = True, default = None):
 	else:
 		return my_list[_letter_to_number(chosen)]
 
-def get_from_dictionary(dictionary, show_cancel = True):
+def get_from_dictionary(dictionary, text = '', show_cancel = True):
 	"""Let the user choose a key and return the corresponding value.
 
 	Note: Use OrderedDict to preserve the option order
 	"""
 
-	key = get_from_list(list(dictionary.keys()), show_cancel=show_cancel)
+	key = get_from_list(list(dictionary.keys()), text = text, show_cancel=show_cancel)
 
 	return dictionary[key] if key else key
 
